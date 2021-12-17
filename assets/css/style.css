@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+@import url("/assets/css/vars.css");
+@import url("/assets/css/btn.css");
 
 body {
      background-color: #1e1e1e;

@@ -1,12 +1,40 @@
-.btn {
-     -webkit-touch-callout: none; /* iOS Safari */
-     -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Old versions of Firefox */
-     -ms-user-select: none; /* Internet Explorer/Edge */
-     user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+[class*=btn] {
+     color: #fff;
+     background-color: #343a40;
+     border-color: #343a40;
+     display: inline-block;
+     font-weight: 400;
+     text-align: center;
+     white-space: nowrap;
+     vertical-align: middle;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     border: 1px solid transparent;
+     padding: 0.375rem 0.75rem;
+     font-size: 1rem;
+     line-height: 1.5;
+     border-radius: 0.25rem;
+     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
      cursor: pointer;
-     border-radius: 10px;
-     background-color: #3e3e3e;
+}
+
+.btn:hover {
+     color: #fff;
+     background-color: #23272b;
+     border-color: #1d2124;
+}
+
+.btn-blue {
+     color: #fff;
+     background-color: #007bff;
+     border-color: #007bff;
+}
+
+.btn-blue:hover {
+     color: #fff;
+     background-color: #0069d9;
+     border-color: #0062cc;
 }
