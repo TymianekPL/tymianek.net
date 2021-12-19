@@ -1,6 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
+@import url("/assets/css/text-utils.css");
 @import url("/assets/css/vars.css");
 @import url("/assets/css/btn.css");
+@import url("/assets/css/colors.css");
+@import url("/assets/css/positions.css");
+@import url("/assets/css/link.css");
+@import url("/assets/css/tables-lists.css");
+
+.no-select {
+     -webkit-touch-callout: none; /* iOS Safari */
+     -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+     -ms-user-select: none; /* Internet Explorer/Edge */
+     user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
 
 body {
      background-color: #1e1e1e;
@@ -14,6 +30,7 @@ body {
      margin-left: 30vh;
      margin-right: 30vh;
      padding: 3px;
+     min-height: 80vh;
 }
 
 .menu {
@@ -21,47 +38,41 @@ body {
      width: 100%;
      height: 50px;
      border-radius: 4px;
+     margin-bottom: 11px;
 }
 
-.title {
+.menu * {
      display: block;
-     float: left;
      font-size: 1.3em;
      margin-left: 4px;
      margin-top: 7.5px;
 }
 
-*[href] {
-     cursor: pointer;
-     color: var(--link);
-     -webkit-text-stroke-width: 0.5px;
+.title {
+     float: left;
 }
 
-*[href]:hover {
-     text-decoration: underline;
+.menu *:not(.title) {
+     float: right;
+     margin-right: 5.5px;
 }
 
-*[href].no-link {
-     cursor: default;
-     color: inherit;
-     -webkit-text-stroke-width: 0px;
+.menu a.home-link {
+     color: #00aeff;
 }
 
-.no-select {
-     -webkit-touch-callout: none; /* iOS Safari */
-     -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Old versions of Firefox */
-     -ms-user-select: none; /* Internet Explorer/Edge */
-     user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+code, pre, .code {
+     font-family: 'Cascadia Code', bold;
+     -webkit-font-smoothing: antialiased;
+     -webkit-text-stroke-width: 0.3px;
+     -moz-osx-font-smoothing: grayscale;
+     --inherits: .no-select;
 }
 
-*[href].no-link:hover {
-     text-decoration: none;
-}
-
-* {
-     outline: none;
-     box-sizing: border-box;
+footer {
+     display: block;
+     text-align: center;
+     margin-left: 40vh;
+     margin-right: 40vh;
+     padding: 3px;
 }

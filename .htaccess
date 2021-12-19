@@ -1,0 +1,5 @@
+ErrorDocument 500 "Houston, we have a problem."
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/404.php
+
+Options -Indexes

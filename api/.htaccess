@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_URI} !developers/*
+RewriteRule (.*) index.php?api=/$1

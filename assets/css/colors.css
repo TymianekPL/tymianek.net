@@ -1,0 +1,35 @@
+.text-gray {
+     color: #5e5e5e;
+}
+
+.text-light-gray {
+     color: #949494;
+}
+
+.text-dark-blue {
+     color: #0000ff;
+}
+
+.text-light-blue {
+     color: #7090ff;
+}
+
+.text-blue {
+     color: rgb(24, 62, 189);
+}
+
+.text-green {
+     color: rgb(24, 189, 32);
+}
+
+.text-red {
+     color: #ff4040;
+}
+
+.text-bold {
+     -webkit-text-stroke-width: 0.5px;
+}
+
+.text-italic {
+     font-style: italic;
+}

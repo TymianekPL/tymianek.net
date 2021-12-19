@@ -2,28 +2,29 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <title>Tymianek.net</title>
+     <title>Redirecting...</title>
      <meta name="description" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="/assets/css/style.css">
-     <link rel="stylesheet" href="/assets/css/responsive.css">
-     <script src="/assets/js/modules.js" async defer></script>
+     <style>
+          body,
+          html {
+               color: snow;
+               background-color: #1e1e1e;
+          }
+     </style>
 </head>
 
 <body>
      <!--[if lt IE 7]>
                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
           <![endif]-->
-     <div class="container">
-          <div class="menu no-select">
-               <div class="title no-link" href="/">Tymianek.Net</div>
-               <span class="home-link func-username func-user-href"></span>
-               <span href="/">Link1</span>
-               <span href="/">Link1</span>
-          </div>
+     <span id="msg">Redirecting...</span>
+</body>
+
+</html>

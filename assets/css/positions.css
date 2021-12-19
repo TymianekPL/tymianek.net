@@ -1,0 +1,12 @@
+.left {
+     float: left;
+}
+
+.right {
+     float: right;
+}
+
+.center {
+     display: inline-block;
+     text-align: center;
+}

@@ -1,0 +1,9 @@
+.ul-inlisted {
+     list-style: none;
+}
+
+li {
+     display: block;
+     margin-top: 1px;
+     text-align: left;
+}

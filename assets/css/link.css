@@ -1,0 +1,36 @@
+*[href]:not([class*=btn]) {
+     cursor: pointer;
+     color: var(--link);
+     -webkit-text-stroke-width: 0.5px;
+     --inherits: .no-select;
+}
+
+*[href]:not([class*=btn]) {
+     text-decoration: none;
+}
+
+*[href]:hover:not([class*=btn]) {
+     text-decoration: underline;
+}
+
+*[href].no-link:not([class*=btn]) {
+     cursor: default;
+     color: inherit;
+     -webkit-text-stroke-width: 0px;
+}
+*[href].no-link:hover:not([class*=btn]) {
+     text-decoration: none;
+}
+
+* {
+     outline: none;
+     box-sizing: border-box;
+}
+
+.link-all-gray *[href]:link, .link-all-gray *[href] {
+     color: gray;
+}
+
+.link-gray[href]:link, .link-gray[href] {
+     color: gray;
+}
