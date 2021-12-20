@@ -9,7 +9,7 @@ export async function get(uri, authorization) {
           compress: true,
           headers: {
                "Content-Type": "application/json",
-               Authorization: authorization,
+               authorization: authorization,
           },
           mode: "cors",
      });

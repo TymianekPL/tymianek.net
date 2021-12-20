@@ -14,7 +14,7 @@ export class User {
           const response = await fetch(api.URIs.GetName, {
                method: "GET",
                headers: {
-                    Authorization: token,
+                    authorization: token,
                },
           });
           return response.status === 200;

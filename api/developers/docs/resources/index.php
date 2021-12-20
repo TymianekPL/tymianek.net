@@ -47,10 +47,10 @@ include $_SERVER["DOCUMENT_ROOT"] . "/api/developers/header.php";
      <li id="token">
           <h2>User Token</h2>
           <p>
-               App token is token that can you can use to access application functions. You must put in into <code>Authorization</code> header to make an request.
+               App token is token that can you can use to access application functions. You must put in into <code>authorization</code> header to make an request.
           </p>
           <p>
-               If you want to access part of API that doesn't accept token (Like <code>/token/account</code>) provide <var>no-token</var> to <code>Authorization</code> header!
+               If you want to access part of API that doesn't accept token (Like <code>/token/account</code>) provide <var>no-token</var> to <code>authorization</code> header!
           </p>
      </li>
      <li>

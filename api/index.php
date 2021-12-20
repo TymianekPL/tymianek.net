@@ -23,12 +23,12 @@ if ($_GET["api"] !== '/') {
                //$file = fopen($api, "r");
                //echo (fread($file, filesize($api)));
                //fclose($file);
-               if (!isset(getallheaders()['Authorization'])) {
+               if (!isset(getallheaders()['authorization'])) {
                     http_response_code(401);
-                    echo '{"error": "Please add Authorization header to your request", "code": 401}';
+                    echo '{"error": "Please add authorization header to your request", "code": 401, "headers": ' . json_encode(getallheaders()) . '}';
                     die();
                }
-               $auth = getallheaders()['Authorization'];
+               $auth = getallheaders()['authorization'];
                include $_SERVER["DOCUMENT_ROOT"] . "/db.php";
                include $_SERVER["DOCUMENT_ROOT"] . "/users.php";
                $db = OpenDB();
@@ -45,7 +45,7 @@ if ($_GET["api"] !== '/') {
                          $mode = "User";
                     } else {
                          http_response_code(401);
-                         echo '{"error": "Authorization header is invalid", "code": 401}';
+                         echo '{"error": "authorization header is invalid", "code": 401}';
                          die();
                     }
                } else {
