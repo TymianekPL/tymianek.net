@@ -27,6 +27,22 @@ include $_SERVER["DOCUMENT_ROOT"] . "/footer.html";
                const _ = await import("/assets/js/api/index.js")
                const json2 = await _.get("/api/v1/account/settings/light", window.localStorage.getItem("token"));
                document.body.setAttribute("theme", json2.enabled == 1 ? "light" : "dark");
+               const json3 = await _.get("/api/v1/account/settings/acrylic", window.localStorage.getItem("token"));
+               document.body.setAttribute("acrylic", json3.enabled == 1 ? "true" : "false");
+
+               const res = await fetch("/api/v1/account/settings/background", {
+                    headers: {
+                         authorization: window.localStorage.getItem("token")
+                    }
+               });
+               const dataJson = await res.text();
+               if (dataJson != "{}") {
+                    const enc = `url(data:image/png;base64,${dataJson})`;
+                    document.body.style.backgroundImage = enc;
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundPosition = "center";
+               }
           } else {
                if (Object.hasOwnProperty.call(userhrefs, key)) {
                     const name = userhrefs[key];

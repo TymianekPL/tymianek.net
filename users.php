@@ -99,6 +99,27 @@ if (!function_exists("getUserName")) {
                return $sql;
           }
 
+          function isAcrylic(): bool
+          {
+               $conn = OpenDB();
+               $sql = "SELECT Acrylic FROM users WHERE id=$this->ID";
+               $res = $conn->query($sql);
+               if ($res->num_rows > 0) {
+                    return $res->fetch_assoc()["Acrylic"];
+               } else {
+                    return NULL;
+               }
+          }
+
+          function setAcrylic(bool $enabled)
+          {
+               $db = OpenDB();
+               $newpassword = mysqli_escape_string($db, $enabled ? "1" : "0");
+               $sql = "UPDATE users SET Acrylic='$newpassword' WHERE ID=$this->ID;";
+               $db->query($sql);
+               return $sql;
+          }
+
           function setPass(string $newpassword)
           {
                $db = OpenDB();
