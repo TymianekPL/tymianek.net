@@ -1,7 +1,7 @@
 export async function init() {
      const _ = await import("./user.js");
      (async () => {
-          //if ((await _.User.getCurrent()) != false) window.location.href = "/";
+          if ((await _.User.getCurrent()) != false) window.location.href = "/";
      })();
 
      const loginBtn = document.getElementById("login-submit");
@@ -20,7 +20,7 @@ export async function init() {
           } else {
                resHeader.className = "text-green";
                resHeader.innerHTML = "Success!";
-               //window.location.href = "/";
+               window.location.href = "/";
           }
           return false;
      };

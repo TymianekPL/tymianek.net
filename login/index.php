@@ -22,6 +22,10 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
           -webkit-text-stroke-width: 0.3px;
      }
 
+     body[theme=light] input {
+          border: 1px #303030 solid;
+     }
+
      input:-webkit-autofill,
      input:-webkit-autofill:hover,
      input:-webkit-autofill:focus,
@@ -34,6 +38,20 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
           -webkit-text-stroke-width: 0.3px !important;
           -moz-osx-font-smoothing: grayscale !important;
      }
+
+     body[theme=light] input:-webkit-autofill,
+     body[theme=light] input:-webkit-autofill:hover,
+     body[theme=light] input:-webkit-autofill:focus,
+     body[theme=light] input:-webkit-autofill:active,
+     body[theme=light] input:-webkit-autofill::first-line {
+          box-shadow: 0 0 0px 1000px snow inset !important;
+          -webkit-text-fill-color: snow !important;
+          font-family: 'Cascadia Code', bold !important;
+          -webkit-font-smoothing: antialiased !important;
+          -webkit-text-stroke-width: 0.3px !important;
+          -moz-osx-font-smoothing: grayscale !important;
+          color: #101010 !important;
+     }
 </style>
 <h1 id="res-msg"></h1>
 <form id="login-form" autocomplete="off">
@@ -41,14 +59,7 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
      <input type="password" id="login-password">
      <input type="submit" value="Login" id="login-submit" class="btn">
 </form>
-<!--
-     <script>
-     moduleImport.js("/assets/js/api/index.js");
-     moduleImport.js("/assets/js/user.js");
-     moduleImport.js("/assets/js/login.js");
-</script> -->
 <script type="module">
-     //await fetch("/assets/js/login.mjs", {});
      (async () => {
           const _ = await import("../assets/js/login.js")
           _.init();

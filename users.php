@@ -57,6 +57,48 @@ if (!function_exists("getUserName")) {
                $db->query($sql);
           }
 
+          function isDeveloper(): bool
+          {
+               $conn = OpenDB();
+               $sql = "SELECT Developer FROM users WHERE id=$this->ID";
+               $res = $conn->query($sql);
+               if ($res->num_rows > 0) {
+                    return $res->fetch_assoc()["Developer"];
+               } else {
+                    return NULL;
+               }
+          }
+
+          function setDeveloper(bool $enabled)
+          {
+               $db = OpenDB();
+               $newpassword = mysqli_escape_string($db, $enabled ? "1" : "0");
+               $sql = "UPDATE users SET Developer='$newpassword' WHERE ID=$this->ID;";
+               $db->query($sql);
+               return $sql;
+          }
+
+          function isLight(): bool
+          {
+               $conn = OpenDB();
+               $sql = "SELECT Light FROM users WHERE id=$this->ID";
+               $res = $conn->query($sql);
+               if ($res->num_rows > 0) {
+                    return $res->fetch_assoc()["Light"];
+               } else {
+                    return NULL;
+               }
+          }
+
+          function setLight(bool $enabled)
+          {
+               $db = OpenDB();
+               $newpassword = mysqli_escape_string($db, $enabled ? "1" : "0");
+               $sql = "UPDATE users SET Light='$newpassword' WHERE ID=$this->ID;";
+               $db->query($sql);
+               return $sql;
+          }
+
           function setPass(string $newpassword)
           {
                $db = OpenDB();

@@ -24,6 +24,5 @@
           <div class="menu no-select">
                <div class="title no-link" href="/">Tymianek.Net</div>
                <span class="home-link func-username func-user-href"></span>
-               <span href="/">Link1</span>
-               <span href="/">Link1</span>
+               <span href="/youtube">YouTube</span>
           </div>
