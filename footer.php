@@ -43,10 +43,28 @@ include $_SERVER["DOCUMENT_ROOT"] . "/footer.html";
                     document.body.style.backgroundSize = "cover";
                     document.body.style.backgroundPosition = "center";
                }
+
+               const res2 = await fetch("/api/v1/account/settings/css", {
+                    headers: {
+                         authorization: window.localStorage.getItem("token")
+                    }
+               });
+               const dataJson2 = await res2.json();
+               const style = document.createElement("style");
+               style.innerHTML = `${dataJson2.css}`;
+               document.head.appendChild(style);
           } else {
-               if (Object.hasOwnProperty.call(userhrefs, key)) {
-                    const name = userhrefs[key];
-                    name.setAttribute("href", "/login");
+               for (const key in userhrefs) {
+                    if (Object.hasOwnProperty.call(userhrefs, key)) {
+                         const name = userhrefs[key];
+                         name.setAttribute("href", "/login");
+                    }
+               }
+               for (const key in names) {
+                    if (Object.hasOwnProperty.call(names, key)) {
+                         const name = names[key];
+                         name.innerHTML = "Login";
+                    }
                }
           }
      }

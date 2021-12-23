@@ -151,5 +151,26 @@ if (!function_exists("getUserName")) {
                     return NULL;
                }
           }
+
+
+          function getCSS(): string | NULL
+          {
+               $conn = OpenDB();
+               $sql = "SELECT CustomCSS FROM users WHERE id=$this->ID";
+               $res = $conn->query($sql);
+               if ($res->num_rows > 0) {
+                    return $res->fetch_assoc()["CustomCSS"];
+               } else {
+                    return NULL;
+               }
+          }
+
+          function setCSS(string $name)
+          {
+               $db = OpenDB();
+               $name = mysqli_escape_string($db, $name);
+               $sql = "UPDATE users SET CustomCSS='$name' WHERE ID=$this->ID;";
+               $db->query($sql);
+          }
      }
 }
