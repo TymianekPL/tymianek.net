@@ -14,9 +14,9 @@
 }
 
 *[href].no-link:not([class*=btn]) {
-     cursor: default;
      color: inherit;
 }
+
 *[href].no-link:hover:not([class*=btn]) {
      text-decoration: none;
 }
