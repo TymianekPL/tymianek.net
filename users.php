@@ -105,7 +105,8 @@ if (!function_exists("getUserName")) {
                $sql = "SELECT Acrylic FROM users WHERE id=$this->ID";
                $res = $conn->query($sql);
                if ($res->num_rows > 0) {
-                    return $res->fetch_assoc()["Acrylic"];
+                    $row = $res->fetch_assoc();
+                    return $row["Acrylic"] == 1 ? true : false;
                } else {
                     return NULL;
                }

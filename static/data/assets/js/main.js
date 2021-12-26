@@ -3,6 +3,7 @@ setInterval(() => {
      for (const key in links) {
           if (Object.hasOwnProperty.call(links, key)) {
                const element = links[key];
+               element.title = element.getAttribute("href");
                if (element.onclick == null) {
                     element.onclick = () => {
                          window.location.href = element.getAttribute("href");

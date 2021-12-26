@@ -15,8 +15,8 @@ $url = strtok($_SERVER["REQUEST_URI"], '?');
      <title>Tymianek.net</title>
      <meta name="description" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="/assets/css/style.css">
-     <link rel="stylesheet" href="/assets/css/responsive.css">
+     <link rel="stylesheet" href="/static/assets/css/style.css">
+     <link rel="stylesheet" href="/static/assets/css/responsive.css">
      <style>
           h1.error {
                margin-top: 1em;
@@ -36,7 +36,7 @@ $url = strtok($_SERVER["REQUEST_URI"], '?');
      <p class="lead"><code><?= $url ?></code> wasn't found on this server</p>
      <span href="javascript:window.history.go(-1)">Go back</span>
 
-     <script src="/assets/js/main.js" async defer></script>
+     <script src="/static/assets/js/main.js" async defer></script>
 </body>
 
 </html>

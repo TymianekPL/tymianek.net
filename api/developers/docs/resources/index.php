@@ -3,46 +3,6 @@ include $_SERVER["DOCUMENT_ROOT"] . "/api/developers/header.php";
 ?>
 
 <h1 title="Application Programming Interface">API</h1>
-<style>
-     li {
-          padding: 10px;
-          margin: 2px;
-     }
-
-     li li {
-          list-style: none;
-     }
-
-     .request-method {
-          color: yellow;
-     }
-
-     table {
-          border-collapse: collapse;
-          width: 100%;
-     }
-
-     table td,
-     table th {
-          border: 1px solid #2e2e2e;
-          padding: 8px;
-     }
-
-     table tr:nth-child(even) {
-          background-color: #292929;
-     }
-
-     table tr:hover {
-          background-color: #2e2e2e;
-     }
-
-     table th {
-          padding-top: 12px;
-          padding-bottom: 12px;
-          text-align: left;
-          background-color: #2e2e2e;
-     }
-</style>
 <ul class="list-unstyled res">
      <li id="token">
           <h2>User Token</h2>

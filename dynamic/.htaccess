@@ -1,0 +1,7 @@
+RewriteEngine On
+DirectoryIndex index.php
+RewriteBase /dynamic
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php?file=/$1

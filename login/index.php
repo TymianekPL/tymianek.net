@@ -61,7 +61,7 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
 </form>
 <script type="module">
      (async () => {
-          const _ = await import("../assets/js/login.js")
+          const _ = await import("../static/assets/js/login.js")
           _.init();
      })();
 </script>

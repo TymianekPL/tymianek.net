@@ -15,13 +15,44 @@ include $_SERVER["DOCUMENT_ROOT"] . "/users.php";
      <title>Tymianek.net</title>
      <meta name="description" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="/assets/css/style.css">
-     <link rel="stylesheet" href="/assets/css/responsive.css">
+     <link rel="stylesheet" href="/static/assets/css/style.css">
+     <link rel="stylesheet" href="/static/assets/css/responsive.css">
+     <style>
+          .dropdown {
+               position: relative;
+               display: inline-block;
+               margin: none;
+               padding: none;
+               margin-top: -7px;
+          }
+
+          .dropdown-content {
+               display: none;
+               position: absolute;
+               min-width: 160px;
+               background-color: #2d2d2d;
+               box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+               margin-top: 55px;
+               z-index: 1;
+          }
+
+          .dropdown:hover .dropdown-content,
+          .dropdown:active .dropdown-content {
+               display: block;
+          }
+     </style>
 </head>
 
 <body>
      <nav class="menu no-select">
           <span href="/api/developers/" class="title no-link" style="cursor: pointer;" href="/api/developers/docs/">Developers portal</span>
-          <span class="func-name func-user-location">Loading...</span>
+
+          <span class="func-username func-user-location">Loading...</span>
+          <div class="dropdown">
+               <span>Mouse over me</span>
+               <div class="dropdown-content">
+                    <p>Hello World!</p>
+               </div>
+          </div>
      </nav>
      <div class="container">

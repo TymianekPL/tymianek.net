@@ -3,7 +3,7 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
 ?>
 <div class="container">
      <p>
-     <h2>Idk, some stupid rules</h2>
+     <h2>Idk, some stupid rules, terms, whatever</h2>
      <h4>
           <ol>
                <li>

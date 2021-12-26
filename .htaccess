@@ -3,3 +3,8 @@ ErrorDocument 404 /errors/404.php
 ErrorDocument 403 /errors/404.php
 
 Options -Indexes
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule /favicon.ico /static/favicon.ico [L]

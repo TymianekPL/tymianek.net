@@ -1,4 +1,5 @@
 <?php
+
 header("Access-Control-Allow-Origin: *", true);
 header("Access-Control-Allow-Headers: *", true);
 header("content-type: application/json", true);
@@ -9,6 +10,7 @@ if (!isset($_GET["api"])) {
      http_response_code(404);
      echo '{"error": "Not found", "code": 404}';
 } else if ($_GET["api"] !== '/') {
+
      $api = __DIR__ . $_GET["api"] . ".php";
      if (str_starts_with("user", $_GET["api"])) {
           if (file_exists($api)) {
@@ -125,6 +127,10 @@ if (!isset($_GET["api"])) {
                }
                try {
                     include $api;
+                    if (!in_array($version, [2])) {
+                         $json["warning"] = "You are using deprecated version of API";
+                    }
+                    print json_encode($json);
                } catch (Exception $e) {
                     http_response_code(500);
                     echo '{"code": 500}';

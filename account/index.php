@@ -582,7 +582,7 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
 </script>
 <script type="module">
      (async () => {
-          const _ = await import("/assets/js/api/index.js")
+          const _ = await import("/static/assets/js/api/index.js")
           const json = await _.get("/api/v1/account/settings/developer", window.localStorage.getItem("token"));
           const elem = document.getElementById("dev-switch");
           elem.checked = json.enabled == 1 ? true : false;

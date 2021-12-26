@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -11,9 +11,10 @@
      <title>Tymianek.net</title>
      <meta name="description" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="/assets/css/style.css">
-     <link rel="stylesheet" href="/assets/css/responsive.css">
-     <script src="/assets/js/modules.js" async defer></script>
+     <link rel="stylesheet" href="/static/assets/css/style.css">
+     <link rel="stylesheet" href="/static/assets/css/responsive.css">
+     <script src="/static/assets/js/modules.js" async defer></script>
+     <link rel="shortcut icon" href="/static/assets/img/icon.png" type="image/png">
 </head>
 
 <body>

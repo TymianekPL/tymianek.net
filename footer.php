@@ -2,10 +2,10 @@
 <?php
 include $_SERVER["DOCUMENT_ROOT"] . "/footer.html";
 ?>
-<script src="/assets/js/main.js" async defer></script>
+<script src="/static/assets/js/main.js" async defer></script>
 <script type="module" async>
      window.onload = async function() {
-          const User = (await import("/assets/js/user.js")).User;
+          const User = (await import("/static/assets/js/user.js")).User;
           const names = document.getElementsByClassName("func-username");
           const userhrefs = document.getElementsByClassName("func-user-href");
           const user = await User.getCurrent();
@@ -24,7 +24,7 @@ include $_SERVER["DOCUMENT_ROOT"] . "/footer.html";
                          name.setAttribute("href", "/account");
                     }
                }
-               const _ = await import("/assets/js/api/index.js")
+               const _ = await import("/static/assets/js/api/index.js")
                const json2 = await _.get("/api/v1/account/settings/light", window.localStorage.getItem("token"));
                document.body.setAttribute("theme", json2.enabled == 1 ? "light" : "dark");
                const json3 = await _.get("/api/v1/account/settings/acrylic", window.localStorage.getItem("token"));
