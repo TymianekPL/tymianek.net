@@ -56,7 +56,12 @@ if (!isset($_GET["file"])) {
           } else if (preg_match("/javascript/", $type)) {
                $output = minify_js($output);
           }
-          print $output;
+
+          if (isset($_GET["type"]) && $_GET["type"] == "base64") {
+               print base64_encode($output);
+          } else {
+               print $output;
+          }
           fclose($h);
      } else {
           error404($_GET["file"]);

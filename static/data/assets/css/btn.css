@@ -23,6 +23,7 @@ body[theme=light] [class*=btn] {
      color: #111111;
      background-color: #e1e1e1;
      border-color: #e1e1e1;
+     background-size: contain;
 }
 
 [class*=btn] {

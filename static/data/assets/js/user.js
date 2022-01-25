@@ -44,10 +44,11 @@ export class User {
      }
 
      static async getCurrent() {
-          const user =
-               new User(window.localStorage.getItem("token")).token !== "null"
-                    ? new User(window.localStorage.getItem("token"))
-                    : false;
-          return window.localStorage.getItem("token") !== null ? user : false;
+          const user = (await this.isValid(
+               window.localStorage.getItem("token")
+          ))
+               ? new User(window.localStorage.getItem("token"))
+               : false;
+          return window.localStorage.getItem("token") != null ? user : false;
      }
 }

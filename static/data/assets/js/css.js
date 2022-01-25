@@ -16,7 +16,6 @@ var inherit;
 Array.from(document.styleSheets).forEach(function (styleSheet_i) {
      Array.from(styleSheet_i.cssRules).forEach(function (cssRule_i) {
           if (cssRule_i.type === cssRule_i.IMPORT_RULE) {
-               console.log(cssRule_i);
                if (cssRule_i.styleSheet != null) {
                     inherit = cssRule_i.styleSheet
                          .getPropertyValue("--inherits")
@@ -31,7 +30,6 @@ Array.from(document.styleSheets).forEach(function (styleSheet_i) {
                     });
                }
           }
-          console.log(cssRule_i);
           if (cssRule_i.style != null) {
                inherit = cssRule_i.style.getPropertyValue("--inherits").trim();
           } else {
@@ -45,8 +43,6 @@ Array.from(document.styleSheets).forEach(function (styleSheet_i) {
           }
      });
 });
-
-console.log(inherit_array);
 
 Array.from(document.styleSheets).forEach(function (styleSheet_i) {
      Array.from(styleSheet_i.cssRules).forEach(function (cssRule_i) {

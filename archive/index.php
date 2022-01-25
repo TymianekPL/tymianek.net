@@ -201,7 +201,6 @@ if (!isset($_GET["file"])) {
                while (!feof($h)) {
                     $buffer = fgets($h, 1 << 24);
                     echo $buffer;
-                    usleep(100000);
                }
                fclose($h);
           }

@@ -13,6 +13,7 @@ export async function init() {
                loginEmail.value,
                loginPassword.value
           );
+          console.log(user);
           if (user == false) {
                resHeader.className = "red";
                resHeader.innerHTML = "Incorrect email/password";

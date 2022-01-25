@@ -17,7 +17,7 @@ include $_SERVER["DOCUMENT_ROOT"] . "/api/developers/header.php";
           <h2>Requests</h2>
           <p>
                <?php
-               $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/api/v1";
+               $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/api/v2";
                ?>
                Base URL: <code><?php echo $url ?></code>
 
@@ -36,7 +36,7 @@ include $_SERVER["DOCUMENT_ROOT"] . "/api/developers/header.php";
                <tbody>
                     <tr>
                          <td>v1</td>
-                         <td>Outdated</td>
+                         <td>Discontinued</td>
                          <td style="color: red;">&times;</td>
                          <td>It's unsecure, will be deleted in near future</td>
                     </tr>
@@ -163,6 +163,151 @@ include $_SERVER["DOCUMENT_ROOT"] . "/api/developers/header.php";
                     <h2><code><span class="request-method">GET</span> /account/name</code></h2>
                     <p>
                          Get name
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-acrylic-get">
+                    <h2><code><span class="request-method">GET</span> /account/settings/acrylic</code></h2>
+                    <p>
+                         Check if acrylic mode is enabled
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-acrylic-set">
+                    <h2><code><span class="request-method">PATCH</span> /account/settings/acrylic</code></h2>
+                    <p>
+                         Set acrylic mode
+                    </p>
+                    <p>
+                    <table>
+                         <thead>
+                              <tr>
+                                   <th>Name</th>
+                                   <th>Type</th>
+                                   <th>Description</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <tr>
+                                   <td>enabled</td>
+                                   <td>boolean</td>
+                                   <td>Is enabled</td>
+                              </tr>
+                              <tr>
+                         </tbody>
+                    </table>
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-background-get">
+                    <h2><code><span class="request-method">GET</span> /account/settings/background</code></h2>
+                    <p>
+                         Get custom background
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-background-set">
+                    <h2><code><span class="request-method">PATCH</span> /account/settings/background</code></h2>
+                    <p>
+                         Check if acrylic mode is enabled
+                    </p>
+                    <p>
+                    <table>
+                         <thead>
+                              <tr>
+                                   <th>Name</th>
+                                   <th>Type</th>
+                                   <th>Description</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <tr>
+                                   <td>background</td>
+                                   <td>BLOB</td>
+                                   <td>Image data</td>
+                              </tr>
+                         </tbody>
+                    </table>
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-css-get">
+                    <h2><code><span class="request-method">GET</span> /account/settings/css</code></h2>
+                    <p>
+                         Get custom CSS
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-css-set">
+                    <h2><code><span class="request-method">PATCH</span> /account/settings/css</code></h2>
+                    <p>
+                         Set custom CSS
+                    </p>
+                    <p>
+                    <table>
+                         <thead>
+                              <tr>
+                                   <th>Name</th>
+                                   <th>Type</th>
+                                   <th>Description</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <tr>
+                                   <td>css</td>
+                                   <td>string</td>
+                                   <td>New CSS to overwrite</td>
+                              </tr>
+                         </tbody>
+                    </table>
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-developer-get">
+                    <h2><code><span class="request-method">GET</span> /account/settings/developer</code></h2>
+                    <p>
+                         Check if is developer
+                    </p>
+                    <p>
+                         Authentation: <span href="#token">Token</span>
+                    </p>
+               </li>
+               <li id="settings-developer-set">
+                    <h2><code><span class="request-method">PATCH</span> /account/settings/developer</code></h2>
+                    <p>
+                         Set developer mode
+                    </p>
+                    <p>
+                    <table>
+                         <thead>
+                              <tr>
+                                   <th>Name</th>
+                                   <th>Type</th>
+                                   <th>Description</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <tr>
+                                   <td>enabled</td>
+                                   <td>boolean</td>
+                                   <td>Is enabled</td>
+                              </tr>
+                         </tbody>
+                    </table>
                     </p>
                     <p>
                          Authentation: <span href="#token">Token</span>

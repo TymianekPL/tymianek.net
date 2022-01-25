@@ -165,3 +165,16 @@ table th {
      text-align: left;
      background-color: #2e2e2e;
 }
+
+@media (max-width: 1200px) {
+     .container, footer {
+          margin-left: 10vh;
+          margin-right: 10vh;
+     }
+}
+@media (max-width: 850px) {
+     .container, footer {
+          margin-left: 0px;
+          margin-right: 0px;
+     }
+}

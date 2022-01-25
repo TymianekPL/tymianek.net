@@ -132,7 +132,7 @@ if (!function_exists("getUserName")) {
           public int $ID;
           function __construct(int $id)
           {
-               $this->ID = $id;
+               $this->ID = getUserName($id) != null ? $id : false;
           }
 
           function getName(): string|null
@@ -148,6 +148,18 @@ if (!function_exists("getUserName")) {
                $res = $conn->query($sql);
                if ($res->num_rows > 0) {
                     return $res->fetch_assoc()["Token"];
+               } else {
+                    return NULL;
+               }
+          }
+
+          function getUrl(): string | NULL
+          {
+               $conn = OpenDB();
+               $sql = "SELECT url FROM users WHERE id=$this->ID";
+               $res = $conn->query($sql);
+               if ($res->num_rows > 0) {
+                    return $res->fetch_assoc()["url"];
                } else {
                     return NULL;
                }

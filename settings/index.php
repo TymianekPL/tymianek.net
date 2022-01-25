@@ -257,6 +257,10 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
           cursor: pointer;
      }
 
+     body[theme=light] .file-upload {
+          border: 1px solid #1e1e1e;
+     }
+
      #snackbar {
           visibility: hidden;
           min-width: 500px;
@@ -410,7 +414,6 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
                               }, 150);
 
                               const j = await response.json()
-                              console.log(response);
                               if (response.status != 200) {
                                    var x = document.getElementById("snackbar");
                                    x.innerHTML = j.error;
@@ -580,29 +583,56 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
           document.body.setAttribute("acrylic", elem.checked == 1 ? "true" : "false");
      }
 </script>
-<script type="module">
-     (async () => {
-          const _ = await import("/static/assets/js/api/index.js")
-          const json = await _.get("/api/v1/account/settings/developer", window.localStorage.getItem("token"));
-          const elem = document.getElementById("dev-switch");
-          elem.checked = json.enabled == 1 ? true : false;
+<script type="module" async>
+     window.onload = async function() {
+               let _ = await import("/static/assets/js/user.js");
+               const user = _.User.getCurrent();
+               if (user == false) {
+                    window.location.href = "/login";
+               }
+               _ = await import("/static/assets/js/api/index.js")
+               const json = await _.get("/api/v1/account/settings/developer", window.localStorage.getItem("token"));
+               const elem = document.getElementById("dev-switch");
+               elem.checked = json.enabled == 1 ? true : false;
 
-          const json2 = await _.get("/api/v1/account/settings/light", window.localStorage.getItem("token"));
-          const elem2 = document.getElementById("light-switch");
-          elem2.checked = json2.enabled == 1 ? true : false;
+               const json2 = await _.get("/api/v1/account/settings/light", window.localStorage.getItem("token"));
+               const elem2 = document.getElementById("light-switch");
+               elem2.checked = json2.enabled == 1 ? true : false;
 
-          const json3 = await _.get("/api/v1/account/name", window.localStorage.getItem("token"));
-          const elem3 = document.getElementById("name-in");
-          elem3.value = json3.name;
+               const json3 = await _.get("/api/v1/account/name", window.localStorage.getItem("token"));
+               const elem3 = document.getElementById("name-in");
+               elem3.value = json3.name;
 
-          const json4 = await _.get("/api/v1/account/settings/acrylic", window.localStorage.getItem("token"));
-          const elem4 = document.getElementById("acrylic-switch");
-          elem4.checked = json4.enabled == 1 ? true : false;
+               const json4 = await _.get("/api/v1/account/settings/acrylic", window.localStorage.getItem("token"));
+               const elem4 = document.getElementById("acrylic-switch");
+               elem4.checked = json4.enabled == 1 ? true : false;
 
-          const json5 = await _.get("/api/v1/account/settings/css", window.localStorage.getItem("token"));
-          const elem5 = document.getElementById("css-in");
-          elem5.value = json5.css;
-     })();
+               const json5 = await _.get("/api/v1/account/settings/css", window.localStorage.getItem("token"));
+               const elem5 = document.getElementById("css-in");
+               elem5.value = json5.css;
+          }
+          (async () => {
+               _ = await import("/static/assets/js/api/index.js")
+               const json = await _.get("/api/v1/account/settings/developer", window.localStorage.getItem("token"));
+               const elem = document.getElementById("dev-switch");
+               elem.checked = json.enabled == 1 ? true : false;
+
+               const json2 = await _.get("/api/v1/account/settings/light", window.localStorage.getItem("token"));
+               const elem2 = document.getElementById("light-switch");
+               elem2.checked = json2.enabled == 1 ? true : false;
+
+               const json3 = await _.get("/api/v1/account/name", window.localStorage.getItem("token"));
+               const elem3 = document.getElementById("name-in");
+               elem3.value = json3.name;
+
+               const json4 = await _.get("/api/v1/account/settings/acrylic", window.localStorage.getItem("token"));
+               const elem4 = document.getElementById("acrylic-switch");
+               elem4.checked = json4.enabled == 1 ? true : false;
+
+               const json5 = await _.get("/api/v1/account/settings/css", window.localStorage.getItem("token"));
+               const elem5 = document.getElementById("css-in");
+               elem5.value = json5.css;
+          })();
 </script>
 
 <script>
@@ -627,7 +657,6 @@ include $_SERVER["DOCUMENT_ROOT"] . "/header.php";
 
 
      var type = window.location.search.substr(1);
-     console.log(type);
      switch (type) {
           case "general":
                opentab("general", document.getElementById("gen-btn"));
